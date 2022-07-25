@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vaibhu18/Project-4-UrlShortner.git"
+    "url": "https://github.com/Vaibhu18/Project4--urlShortner.git"
   },
   "author": "Vaibhav Shinde",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vaibhu18/Project-4-UrlShortner/issues"
+    "url": "https://github.com/Vaibhu18/Project4--urlShortner.git"
   },
-  "homepage": "https://github.com/Vaibhu18/Project-4-UrlShortner#readme",
+  "homepage": "https://github.com/Vaibhu18/Project4--urlShortner.git",
   "description": "",
   "dependencies": {
     "express": "^4.18.1",
