@@ -2,15 +2,11 @@
 const urlModel = require('../model/model.js')
 const shortId = require('short-id')
 const redis = require("redis");
+const validator = require("../validations/validator.js");
 const { promisify } = require("util");
 
 let validUrl = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/
 
-const isValid = function (value) {
-    if (typeof value === "undefined" || value === null) return false;
-    if (typeof value === "string" && value.trim().length === 0) return false;
-    return true;
-}
 //Connect to redis
 const redisClient = redis.createClient(
     12137,
@@ -38,7 +34,7 @@ const createUrl = async function (req, res) {
     try {
         let longUrl = req.body.longUrl
 
-        if (!isValid(longUrl)) {
+        if (isValid(longUrl)) {
             return res.status(400).send({ status: false, msg: "please enter a link as a value" })
         }
         if (!validUrl.test(longUrl)) {
