@@ -34,7 +34,7 @@ const createUrl = async function (req, res) {
     try {
         let longUrl = req.body.longUrl
 
-        if (isValid(longUrl)) {
+        if (!isValid(longUrl)) {
             return res.status(400).send({ status: false, msg: "please enter a link as a value" })
         }
         if (!validUrl.test(longUrl)) {
